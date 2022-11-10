@@ -1,0 +1,46 @@
+Project Notes
+
+Framework Types
+1. TDD 
+Test Driven Development
+--first we write test cases
+--according to test case, we write the code
+
+2. BDD
+--Behavior Driven Development
+--we write features/stories
+
+
+Design Patterns
+1. SingleTon
+2. POM: Page Object Model
+--means one class for every page
+--the test class will contain all the relevant test cases for that page
+--the code class will contain the attributes and actions for that page
+
+Utilities/External Libraries:
+1. Selenium
+2. WebdriverManager
+3. Apache POI
+4. Logger
+5. Extent Reports
+
+Rules:
+1. Follow the OOPs concept
+2. No Hard Coding
+3. Different pages and re usable code
+
+Folder Structure:
+src/main/java >> this will contain the main java code
+src/main/test >> this will contain the test cases
+
+src/main/resources >> this will contain the resource file for code
+src/test/resources >> this will contain the relevant test data or files
+
+Test Case:
+1. What am i Testing
+2. What is the expected output and what is the test data
+3. Compare the actual OP with expected OP
+4. It will not know how to test or what actions needs to be done
+
+
