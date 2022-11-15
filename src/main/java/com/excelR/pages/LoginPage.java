@@ -15,11 +15,11 @@ public class LoginPage extends OHRMBase {
 		return driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div/div[1]/div/div[1]/img")).isDisplayed();
 	}
 	
-	public boolean login() {
-		driver.findElement(By.name("username")).sendKeys("Admin");
-		driver.findElement(By.name("password")).sendKeys("admin123");
+	public DashboardPage login(String username, String password) {
+		driver.findElement(By.name("username")).sendKeys(username);
+		driver.findElement(By.name("password")).sendKeys(password);
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
-		return driver.findElement(By.xpath("//span[text()='Dashboard']")).isDisplayed();
+		return new DashboardPage();
 	}
 	
 	

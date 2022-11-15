@@ -6,8 +6,8 @@
       <class name="com.excelR.testcases.LoginPageTest">
         <methods>
           <include name="browserConfig"/>
-          <include name="forgotPasswordTest"/>
           <include name="closeBrowser"/>
+          <include name="validateTitleTest"/>
         </methods>
       </class> <!-- com.excelR.testcases.LoginPageTest -->
     </classes>

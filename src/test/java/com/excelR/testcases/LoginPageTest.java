@@ -7,6 +7,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.excelR.base.OHRMBase;
+import com.excelR.pages.DashboardPage;
 import com.excelR.pages.LoginPage;
 
 public class LoginPageTest extends OHRMBase {
@@ -18,6 +19,7 @@ public class LoginPageTest extends OHRMBase {
 	 */
 
 	LoginPage lp;
+	DashboardPage dp;
 
 	@BeforeMethod
 	public void browserConfig() {
@@ -45,8 +47,8 @@ public class LoginPageTest extends OHRMBase {
 
 	@Test
 	public void validateLoginTest() {
-		boolean check = lp.login();
-		Assert.assertTrue(check);
+		dp = lp.login(prop.getProperty("username"),prop.getProperty("password"));
+		Assert.assertTrue(dp.checkDashboardMenu());
 	}
 
 	@Test
