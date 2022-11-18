@@ -1,11 +1,15 @@
 package com.excelR.base;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
 
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -51,6 +55,18 @@ public class OHRMBase {
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void captureScreenshot(String testcaseName) {
+		TakesScreenshot scr = (TakesScreenshot) driver;
+		File file =  scr.getScreenshotAs(OutputType.FILE);
+		String destination = "./Screenshots/" + testcaseName + ".png"; 
+		try {
+			FileUtils.copyFile(file, new File(destination));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
